@@ -1,5 +1,6 @@
 package org.example;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Objects;
 import java.util.Optional;
@@ -7,12 +8,12 @@ import java.util.Optional;
 public class Wall implements Structure, CompositeBlock {
 
 
-    private List<Block> blocks;
+    private List<Block> blocks = new ArrayList<>();
     private String color;
     private String material;
 
-    public Wall(List<Block> blocks) {
-        this.blocks = blocks;
+    public Wall() {
+
     }
 
     public Wall(String color, String material) {
