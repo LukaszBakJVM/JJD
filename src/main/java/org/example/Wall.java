@@ -1,6 +1,7 @@
 package org.example;
 
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 public class Wall implements Structure, CompositeBlock {
@@ -61,6 +62,17 @@ public class Wall implements Structure, CompositeBlock {
         return ", color='" + color + '\'' + ", material='" + material + '\'' + '}';
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Wall wall = (Wall) o;
+        return Objects.equals(color, wall.color) && Objects.equals(material, wall.material);
+    }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(color, material);
+    }
 }
 
